@@ -1,5 +1,5 @@
 {
-    "name": "abdobaiaich/emailsender",
+    "name": "rednucleus/emailsender",
     "description": "Sending Email using microsoft Graph",
     "type": "library",
     "require": {
@@ -10,7 +10,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Abdobaiaich\\Emailsender\\": "src/"
+            "rednucleus\\Emailsender\\": "src/"
         }
     },
     "authors": [
