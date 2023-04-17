@@ -1,0 +1,22 @@
+{
+    "name": "abdobaiaich/emailsender",
+    "description": "Sending Email using microsoft Graph",
+    "type": "library",
+    "require": {
+        "guzzlehttp/guzzle": "7.0",
+        "illuminate/mail": "^8.83",
+        "illuminate/support": "^8.83",
+        "ext-json": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Abdobaiaich\\Emailsender\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "abaiaich",
+            "email": "abaiaich@rednucleus.com"
+        }
+    ]
+}
