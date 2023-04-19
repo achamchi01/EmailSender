@@ -1,6 +1,6 @@
 <?php
 
-namespace rednucleus\Emailsender;
+namespace Abdobaiaich\Emailsender;
 
 use DateTime;
 use Exception;
