@@ -8,7 +8,7 @@ use Illuminate\Support\ServiceProvider;
 use LaravelMsGraphMail\Exceptions\CouldNotSendMail;
 use \Illuminate\Support\Facades\Config;
 
-class MsGraphMailServiceProvider extends ServiceProvider {
+class MSGraphEmailServiceProvider extends ServiceProvider {
 
     /**
      * Boot any application services.

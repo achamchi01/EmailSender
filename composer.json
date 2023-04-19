@@ -5,7 +5,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "rednucleus\\Emailsender\\src\\laravel\\MsGraphMailServiceProvider"
+                "rednucleus\\emailsender\\src\\laravel\\MSGraphEmailServiceProvider"
             ]
         }
     },
