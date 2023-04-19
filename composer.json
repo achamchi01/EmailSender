@@ -11,7 +11,7 @@
     },
     "autoload": {
         "psr-4": {
-            "rednucleus\\Emailsender\\": "src/"
+            "rednucleus\\Emailsender\\": "src/laravel/"
         }
     },
     "authors": [
