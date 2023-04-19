@@ -18,13 +18,19 @@
     },
     "autoload": {
         "psr-4": {
-            "rednucleus\\Emailsender\\": "src/laravel/"
+            "rednucleus\\Emailsender\\": "src/"
         }
     },
     "authors": [
         {
-            "name": "abaiaich",
-            "email": "abaiaich@rednucleus.com"
+            "name": "Baiaich Abderrazzak",
+            "email": "abaiaich@rednucleus.com",
+            "role": "Director, Software Engineering & System Architecture Programming"
+        },
+        {
+            "name": "Chamchi Ayoub",
+            "email": "achamchi@rednucleus.com",
+            "role": "Software Developer"
         }
     ]
 }

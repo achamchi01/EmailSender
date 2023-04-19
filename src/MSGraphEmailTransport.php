@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 namespace rednucleus\Emailsender;
 
@@ -14,10 +14,8 @@ use Symfony\Component\Mailer\Transport\AbstractTransport;
 use Symfony\Component\Mime\MessageConverter;
 use Throwable;
 
-class MSGraphEmailTransport extends AbstractTransport{
-
- 
-
+class MSGraphEmailTransport extends AbstractTransport
+{
     protected $microsoftGraphEmail = null;
     public function __construct($config)
     {
@@ -37,11 +35,11 @@ class MSGraphEmailTransport extends AbstractTransport{
             'text' => $email->getTextBody(),
             'html' => $email->getHtmlBody(),
         ];
-        //var_dump($result); // to be deleted and uncomment the line below , just for test 
+
         $this->microsoftGraphEmail->send($result['to'], $result['subject'], $result['text'] == null ? $result['html'] : $result['text']);
     }
 
-     /**
+    /**
      * Get the string representation of the transport.
      *
      * @return string

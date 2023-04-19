@@ -20,28 +20,25 @@ class MicrosoftGraphEmail
 
     private $httpClient = null;
 
-    
-    
+
+
 
     public function __construct($clientID, $clientSecret, $tenantId, $refreshToken)
     {
-         $this->clientID = $clientID;
-         $this->clientSecret = $clientSecret;
-         $this->refreshToken = $refreshToken;
-         $this->tenantId = $tenantId;
-         $this->tokenManager = new TokenManager($this->clientID, $this->clientSecret, $this->tenantId);
-         $this->httpClient  = new Client();
-        
+        $this->clientID = $clientID;
+        $this->clientSecret = $clientSecret;
+        $this->refreshToken = $refreshToken;
+        $this->tenantId = $tenantId;
+        $this->tokenManager = new TokenManager($this->clientID, $this->clientSecret, $this->tenantId);
+        $this->httpClient = new Client();
+
     }
 
-
-
     public function send($to, $subject, $body)
-    {  
-
+    {
         $this->accessToken = $this->tokenManager->isValidToken($this->accessToken) ?
-                             $this->accessToken : 
-                             $this->tokenManager->getAccessToken($this->refreshToken);
+            $this->accessToken :
+            $this->tokenManager->getAccessToken($this->refreshToken);
 
         $headers = [
             'Authorization' => 'Bearer ' . $this->accessToken,
