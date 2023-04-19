@@ -2,13 +2,6 @@
     "name": "rednucleus/emailsender",
     "description": "Sending Email using microsoft Graph",
     "type": "library",
-    "extra": {
-        "laravel": {
-            "providers": [
-                "rednucleus\\Emailsender\\MsGraphMailServiceProvider"
-            ]
-        }
-    },
     "require": {
         "php": "^8.1",
         "laravel/framework": "^9.0",
