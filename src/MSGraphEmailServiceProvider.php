@@ -17,9 +17,8 @@ class MSGraphEmailServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $configPath = __DIR__ . '/../../../config/msgraph.php'; /* path to the msgraph in the config laravel folder  */
         $this->publishes([
-            __DIR__ . '/../config/msgraph.php' => config_path('msgraph.php'),
+            __DIR__ . '/config/msgraph.php' => config_path('msgraph.php'),
         ]);
         Mail::extend('msgraph', function (array $config = []) {
             $configs = Config::get("msgraph");
