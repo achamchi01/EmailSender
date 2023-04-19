@@ -28,7 +28,7 @@ class MSGraphEmailServiceProvider extends ServiceProvider
 
     public function register()
     {
-        App::register('rednucleus\Emailsender\MSGraphEmailServiceProvider');
+        $this->app->register('rednucleus\Emailsender\MSGraphEmailServiceProvider');
     }
 
 }
