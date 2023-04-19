@@ -27,6 +27,11 @@ class MSGraphEmailServiceProvider extends ServiceProvider
         });
     }
 
+    public function register()
+    {
+        App::register('rednucleus\Emailsender\MSGraphEmailServiceProvider');
+    }
+
 }
 
 ?>
