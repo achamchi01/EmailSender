@@ -1,6 +1,6 @@
 <?php 
 
-namespace Abdobaiaich\Emailsender;
+namespace rednucleus\Emailsender;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\BadResponseException;

@@ -1,11 +1,11 @@
 {
-    "name": "abdobaiaich/emailsender",
+    "name": "rednucleus/emailsender",
     "description": "Sending Email using microsoft Graph",
     "type": "library",
     "extra": {
         "laravel": {
             "providers": [
-                "Abdobaiaich\\Emailsender\\MsGraphMailServiceProvider"
+                "rednucleus\\Emailsender\\MsGraphMailServiceProvider"
             ]
         }
     },
@@ -18,7 +18,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Abdobaiaich\\Emailsender\\": "src/"
+            "rednucleus\\Emailsender\\": "src/"
         }
     },
     "authors": [

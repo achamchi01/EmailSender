@@ -1,6 +1,6 @@
 <?php
 
-namespace Abdobaiaich\Emailsender;
+namespace rednucleus\Emailsender;
 
 use Exception;
 use Illuminate\Support\Facades\Mail;
