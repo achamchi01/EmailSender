@@ -6,6 +6,9 @@
         "laravel": {
             "providers": [
                 "rednucleus\\emailsender\\src\\laravel\\MSGraphEmailServiceProvider"
+            ],
+            "dont-discover": [
+                "rednucleus/emailsender/src/laravel/MSGraphEmailServiceProvider"
             ]
         }
     },
