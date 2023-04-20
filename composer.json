@@ -2,6 +2,7 @@
     "name": "rednucleus/emailsender",
     "description": "Sending Email using microsoft Graph",
     "type": "library",
+    "license": "MIT",
     "extra": {
         "laravel": {
             "providers": [
