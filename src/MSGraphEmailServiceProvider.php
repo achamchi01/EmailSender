@@ -19,11 +19,11 @@ class MSGraphEmailServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->publishes([
-            __DIR__ . '/config/msgraph.php' => config_path('msgraph.php'),
+            __DIR__ . '/config/rnemailsender.php' => config_path('rnemailsender.php'),
         ]);
-        Mail::extend('msgraph', function (array $config = []) {
-            $configs = Config::get("msgraph");
-            return new MSGraphEmailTransport($configs);
+        Mail::extend('rnemailsender', function (array $config = []) {
+            $keys = Config::get("rnemailsender");
+            return new MSGraphEmailTransport(array_merge($keys, $config));
         });
     }
 

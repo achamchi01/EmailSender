@@ -17,26 +17,40 @@ use Throwable;
 class MSGraphEmailTransport extends AbstractTransport
 {
     protected $microsoftGraphEmail = null;
+    protected $sender = null;
+
     public function __construct($config)
     {
         parent::__construct();
+        $this->sender = $config['sender'];
         $this->microsoftGraphEmail = new MicrosoftGraphEmail($config['clientid'], $config['clientsecret'], $config['tenantid'], $config['refreshtoken']);
     }
 
     protected function doSend(SentMessage $message): void
     {
-        $email = MessageConverter::toEmail($message->getOriginalMessage());
-        $result = [
-            'from_email' => $email->getFrom(),
-            'to' => collect($email->getTo())->map(function ($email) {
-                return ['email' => $email->getAddress(), 'type' => 'to'];
-            })->all(),
-            'subject' => $email->getSubject(),
-            'text' => $email->getTextBody(),
-            'html' => $email->getHtmlBody(),
-        ];
+        switch($this->sender) {
+            case 'smtp': 
+                dd("Send email using SMTP");
+                break;
+            case 'msgraph':
+                dd("Send email using msgraph");
+                $email = MessageConverter::toEmail($message->getOriginalMessage());
+                $result = [
+                    'from_email' => $email->getFrom(),
+                    'to' => collect($email->getTo())->map(function ($email) {
+                        return ['email' => $email->getAddress(), 'type' => 'to'];
+                    })->all(),
+                    'subject' => $email->getSubject(),
+                    'text' => $email->getTextBody(),
+                    'html' => $email->getHtmlBody(),
+                ];
 
-        $this->microsoftGraphEmail->send($result['to'], $result['subject'], $result['text'] == null ? $result['html'] : $result['text']);
+                $this->microsoftGraphEmail->send($result['to'], $result['subject'], $result['text'] == null ? $result['html'] : $result['text']);
+                break;
+            default: 
+                exit();
+        }
+        
     }
 
     /**
